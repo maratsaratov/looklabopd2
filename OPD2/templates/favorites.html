@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorite</title>
+</head>
+<body>
+    <h1>favorite look</h1>
+    {% for favorite in favorites %}
+    <img src="{{ favorite.outfit_image }}" alt="Favorite Outfit">
+    {% endfor %}
+</body>
+</html>

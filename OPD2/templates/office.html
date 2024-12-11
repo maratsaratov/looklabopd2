@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <style>
+        a
+        {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .Back
+        {
+            background-color: white;
+            margin-top: 100px;
+            width: 100%;
+            height: 951px;
+        }
+
+        header 
+        {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 129px;
+            z-index: 1000;
+            background-color: white;
+        }
+        .Buttoncabinet
+        {
+            float: right;
+            margin-right: 42px;
+            margin-top: 30px;
+        }
+        .Input
+        {
+            height: 60px;
+            width: 180px;
+            background-color: white;
+            font: 24px Montserrat Alternates Medium;
+            cursor: pointer;
+            margin-right: 22px;
+        }
+        .Input:hover 
+        {
+            background-color: #ADB3FF;
+            color: white;
+            border: 2px solid #ADB3FF;
+        }
+        .Photo
+        {
+            margin-top: -65%;
+            float: right;
+            margin-right: -70%;
+        }
+        .Textup
+        {
+            font: 23px Montserrat Alternates Medium;
+        }
+        .Us
+        {
+            margin-top: 50px;
+            margin-left: 276px;
+            cursor: pointer;
+        }
+        .Us:hover
+        {
+            color: #ADB3FF;
+        }
+        .Contacts
+        {
+            margin-left: 418px;
+            margin-top: -28px;
+            cursor: pointer;
+        }
+        .Contacts:hover
+        {
+            color: #ADB3FF;
+        }
+        .Logo
+        {
+            font: 24px Unbounded Medium;
+        }
+        .Black
+        {
+            margin-left: 70px;
+            margin-top: -54px;
+        }
+        .Purple
+        {
+            margin-left: 141px;
+            margin-top: -54px;
+            color: #ADB3FF;
+        } 
+
+        .Textcenter
+        {
+
+            font: 55px Montserrat Black;
+            margin-top: -950px;
+            margin-left: 100px;
+        }
+
+        .Buttonfav
+        {
+            width: 250px;
+            height: 64px;
+            float: right;
+            margin-right: 300px;
+            margin-top: -133px;
+            background-color: #3A3A3A;
+            color: white;
+            font: 17px Montserrat Medium;
+            cursor: pointer;
+            border: none;
+        }
+
+        .Changefoto
+        {
+            float: right;
+            width: 250px;
+            margin-right: 300px;
+            height: 290px;
+            background-color: #F6F6F6;
+            margin-top: -34px;
+        }
+        .Textfoto
+        {
+            float: right;
+            margin-right: -185px;
+            font: 17px Montserrat Medium;
+            margin-top: 60px;
+        }
+        .Imagephoto
+        {
+            float: right;
+            margin-top: -2.05%;
+            margin-right: -30%;
+        }
+
+        .Textname
+        {
+            font: 17px Montserrat Medium;
+            margin-top: 20px;
+            margin-left: 100px;
+            color: #777777;
+        }
+        .Imagename
+        {
+            margin-top: -20px;
+            margin-left: 670px;
+        }
+        .Name
+        {
+            border: none;
+            border-bottom: 1px solid black;
+            width: 600px;
+            margin-left: 100px;
+            margin-top: -80px;
+            outline: none;
+            font: 18px Montserrat Medium;
+        }
+        .Textemail
+        {
+            font: 17px Montserrat Medium;
+            margin-top: 20px;
+            margin-left: 100px;
+            color: #777777;
+        }
+        .Imagepassword
+        {
+            margin-top: 0px;
+            margin-left: 670px;
+        }
+        .Email
+        {
+            border: none;
+            border-bottom: 1px solid black;
+            width: 600px;
+            margin-left: 100px;
+            margin-top: -30px;
+            outline: none;
+            font: 18px Montserrat Medium;
+        }
+        .Textpassword
+        {
+            font: 17px Montserrat Medium;
+            margin-top: 20px;
+            margin-left: 100px;
+            color: #777777;
+        }
+        .Password
+        {
+            border: none;
+            border-bottom: 1px solid black;
+            width: 600px;
+            margin-left: 100px;
+            margin-top: 30px;
+            outline: none;
+            font: 22px Montserrat Medium;
+        }
+        .Change
+        {
+            font: 17px Montserrat Medium;
+            margin-left: 100px;
+            color: #777777;
+        }
+
+        .Backlast
+        {
+            width: 90%;
+            height: 300px;
+            background-color: #ADB3FF;
+            margin-left: 5%;
+            margin-top: 100px;
+        }
+        .History
+        {
+            font: 50px Montserrat Black;
+            margin-top: -17%;
+            margin-left: 10%;
+            color: white;
+        }
+        .Nothing
+        {
+            font: 22px Montserrat Medium;
+            margin-left: 10%;
+            color: white;
+            margin-top: -2%;
+        }
+
+        @font-face 
+        {
+            font-family: Montserrat Alternates Medium;
+            src: url(fonts/MontserratAlternates-Medium.ttf);
+        }
+        @font-face 
+        {
+            font-family: Unbounded Medium;
+            src: url(fonts/Unbounded-Medium.ttf);
+        }
+        @font-face 
+        {
+            font-family: Montserrat Black;
+            src: url(fonts/Montserrat-Black.ttf);
+        }
+        @font-face 
+        {
+            font-family: Montserrat Medium;
+            src: url(fonts/Montserrat-Medium.ttf);
+        }
+    </style>
+</head>
+<body>
+    <div class="Background">
+        <div class="Back"></div>
+    </div>
+
+    <header>
+        <div class="Buttoncabinet">
+            <form action="{{ url_for('logout') }}" method="post" style="display: inline;">
+                <div class="buttons">
+                    <button type="submit" class="Input">Выход</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="Textup">
+            <div class="Us">
+                <a href="{{ url_for('contact') }}" class="Input">О нас</a>
+            </div>
+            <div class="Contacts">
+                <a href="{{ url_for('about') }}" class="Input">О приложении</a>
+            </div>
+        </div>
+
+        <div class="Logo">
+            <div class="Black">
+                <a href="{{ url_for('home') }}"><p>Look</p></a> <!-- Link to the home page -->
+            </div>
+            <div class="Purple">
+                <a href="{{ url_for('home') }}"><p>Lab</p></a> <!-- Link to the home page -->
+            </div>
+        </div>
+    </header>
+
+    <div class="Textcenter">
+        <p>Личный кабинет</p>
+    </div>
+
+    <div class="Button1">
+        <a href="{{ url_for('favorites') }}"><button class="Buttonfav">Избранное</button></a>
+    </div>
+    
+    <div class="Foto">
+        <div class="Changefoto">
+        </div>
+        <div class="Textfoto">
+            <p>Изменить<br> изображение</p>
+        </div>
+        <div class="Imagephoto">
+            <img src="images/image.png" alt="" width="250px" height="290px">
+        </div>
+    </div>
+
+    <div class="Data">
+        <form action="" method="post">
+            <div class="Textname"><p>Имя</p></div>
+            <div class="Imagename">
+                <img src="images/pen_icon (2).png" alt="" width="30px" height="30px">
+            </div>
+            <input type="text" class="Name" required>
+            <div class="Textemail">Почта</div>
+            <div class="Imagepassword">
+                <img src="images/pen_icon (2).png" alt="" width="30px" height="30px">
+            </div>
+            <input type="email" class="Email" required>
+            <div class="Textpassword">Пароль</div>
+            <input type="password" class="Password" required>
+            <div class="Change"><p>Хотите изменить пароль?</p></div>
+        </form>
+    </div>
+
+    <div class="Last">
+        <div class="Backlast">
+        </div>
+        <div class="History">
+            <p>История генераций</p>
+        </div>
+        <div class="Nothing">
+            <p>Здесь пока ничего нет</p>
+        </div>
+    </div>
+
+</body>
+</html>

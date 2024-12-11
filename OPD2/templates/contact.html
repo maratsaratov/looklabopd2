@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="images/x-icon" href="static/favicon/favicon.ico">
+    <title>Наша команда</title>
+    <style>
+        /* Общие стили */
+body {
+    font: 24px Montserrat Alternates Medium;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-image: url(back.png)
+}
+
+/* Хедер */
+header 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 129px;
+    z-index: 1000;
+    background-color: white;
+}
+.Button1
+{
+    float: right;
+    margin-right: 42px;
+    margin-top: 30px;
+}
+.Input
+{
+    height: 60px;
+    width: 180px;
+    background-color: white;
+    font: 24px Montserrat Alternates Medium;
+    cursor: pointer;
+    margin-right: 22px;
+}
+.Input:hover
+{
+    background-color: #ADB3FF;
+    color: white;
+    border: 2px solid #ADB3FF;
+}
+.Register
+{
+    height: 60px;
+    width: 210px;
+    background-color: white;
+    font: 24px Montserrat Alternates Medium;
+    cursor: pointer;
+}
+.Register:hover
+{
+    background-color: #ADB3FF;
+    color: white;
+    border: 2px solid #ADB3FF;
+}
+
+.Textup
+{
+    font: 23px Montserrat Alternates Medium;
+}
+.Us
+{
+    margin-top: 51px;
+    margin-left: 276px;
+    cursor: pointer;
+}
+        
+.Us:hover
+{
+    color: #ADB3FF;
+}
+.Contacts
+{
+    margin-left: 418px;
+    margin-top: -50px;
+    cursor: pointer;
+}
+.Contacts:hover
+{
+    color: #ADB3FF;
+}
+.Logo
+{
+    font: 24px Unbounded Medium;
+}
+.Black
+{
+    margin-left: 70px;
+    margin-top: -54px;
+}
+.Purple
+{
+    margin-left: 141px;
+    margin-top: -54px;
+    color: #ADB3FF;
+}
+
+/* Секция команды */
+.team-section {
+    text-align: center;
+    padding: 5em 0;
+    background-color: transparent;
+}
+
+.team-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #3F459B;
+    margin-bottom: 20px;
+}
+
+.team-subtitle {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 5em;
+}
+
+/* Карточки участников */
+.team {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.team-member {
+    position: relative; /* Создаём контекст для позиционирования внутренних элементов */
+    width: 220px;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden; /* Чтобы элементы не выходили за границы блока */
+}
+
+.team-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: 0.3s ease; /* Плавность перехода для затемнения */
+}
+
+.team-member:hover .team-photo {
+    filter: brightness(0.5); /* Затемнение при наведении */
+}
+
+
+.team-member a.member-contact {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    opacity: 0; /* По умолчанию скрыта */
+    transition: 0.3s ease;
+}
+
+.team-member:hover a.member-contact {
+    opacity: 1; /* Появление ссылки */
+}
+
+.member-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: -0.5em;
+    color: #333;
+}
+
+.member-role {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 1em;
+}
+
+.member-contact:hover {
+    text-decoration: underline;
+}
+
+.Backmodal {
+    backdrop-filter: blur(5px);
+    position: fixed;
+    inset: 0;
+    background-color: rgb(0, 0, 0, 0.5);
+    display: flex;
+    cursor: pointer;
+}
+
+.Modal {
+    width: 600px;
+    height: 450px;
+    background-color: white;
+    margin: auto;
+    cursor: default;
+}
+
+.Welcome {
+    font: 22px Montserrat Medium;
+    margin-left: 45px;
+    margin-top: 40px;
+}
+
+.Textname {
+    font: 17px Montserrat Medium;
+    margin-top: 20px;
+    margin-left: 45px;
+    color: #777777;
+}
+
+.Name {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 500px;
+    margin-left: 45px;
+    margin-top: 20px;
+    outline: none;
+}
+
+.Textemail {
+    font: 17px Montserrat Medium;
+    margin-top: 20px;
+    margin-left: 45px;
+    color: #777777;
+}
+
+.Email {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 500px;
+    margin-left: 45px;
+    margin-top: 30px;
+    outline: none;
+}
+
+.Textpassword {
+    font: 17px Montserrat Medium;
+    margin-top: 20px;
+    margin-left: 45px;
+    color: #777777;
+}
+
+.Password {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 500px;
+    margin-left: 45px;
+    margin-top: 30px;
+    outline: none;
+}
+
+.Buttonreg {
+    width: 505px;
+    height: 72px;
+    margin: 15px;
+    margin-left: 45px;
+    border-radius: 0px;
+    border: none;
+    background-color: #ECECEC;
+    font: 20px Montserrat Medium;
+    color: #777777;
+}
+
+.Buttonreg.active {
+    background-color: #373737;
+    color: white;
+    cursor: pointer;
+    pointer-events: auto; 
+}
+
+.Close {
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    font: 50px Jura Light ;
+    position: absolute;
+    margin-left: 603px;
+    margin-top: -473px;
+}
+
+.Backmodalin {
+    backdrop-filter: blur(5px);
+    position: fixed;
+    inset: 0;
+    background-color: rgb(0, 0, 0, 0.5);
+    display: flex;
+    cursor: pointer;
+}
+
+.Modalin {
+    width: 600px;
+    height: 450px;
+    background-color: white;
+    margin: auto;
+    cursor: default;
+}
+
+.Welcomein {
+    font: 22px Montserrat Medium;
+    margin-left: 45px;
+    margin-top: 40px;
+}
+
+.Textnamein {
+    font: 17px Montserrat Medium;
+    margin-top: 20px;
+    margin-left: 45px;
+    color: #777777;
+}
+
+.Nameor {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 500px;
+    margin-left: 45px;
+    margin-top: 20px;
+    outline: none;
+}
+
+.Textpasswordin {
+    font: 17px Montserrat Medium;
+    margin-top: 20px;
+    margin-left: 45px;
+    color: #777777;
+}
+
+.Passwordin {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 500px;
+    margin-left: 45px;
+    margin-top: 30px;
+    outline: none;
+}
+
+.Buttonin {
+    width: 505px;
+    height: 70px;
+    margin: 15px;
+    margin-left: 45px;
+    border-radius: 0px;
+    border: none;
+    background-color: #ECECEC;
+    font: 20px Montserrat Medium;
+    color: #777777;
+}
+
+.Buttonin.active {
+    background-color: #373737;
+    color: white;
+    cursor: pointer;
+    pointer-events: auto; 
+}
+
+.Closein {
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    font: 50px Jura Light ;
+    position: absolute;
+    margin-left: 603px;
+    margin-top: -440px;
+}
+
+.Remember {
+    font: 17px Montserrat Medium;
+    margin-top: 20px;
+    margin-left: 45px;
+}
+
+@font-face 
+{
+    font-family: Montserrat Alternates Medium;
+    src: url(static/fonts/MontserratAlternates-Medium.ttf);
+}
+@font-face 
+{
+    font-family: Unbounded Medium;
+    src: url(static/fonts/Unbounded-Medium.ttf);
+}
+@font-face 
+{
+    font-family: Unbounded Black;
+    src: url(static/fonts/Unbounded-Black.ttf);
+}
+@font-face 
+{
+    font-family: Montserrat Medium;
+    src: url(static/fonts/Montserrat-Medium.ttf);
+}
+@font-face 
+{
+    font-family: Jura Light;
+    src: url(static/fonts/Jura-Light.ttf);
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="Button1">
+            {% if 'username' in session %}
+            <form action="{{ url_for('profile') }}" method="post" style="display: inline;">
+                <div class="buttons">
+                    <button type="submit" class="Input">Кабинет</button>
+                </div>
+            </form>
+            {% else %}
+            <button class="Register">Регистрация</button>
+            <button class="Input">Войти</button>
+            {% endif %}
+        </div>
+
+        <div class="Textup">
+            <div class="Us">
+                <a href="{{ url_for('contact') }}" class="Input">О нас</a>
+            </div>
+            <div class="Contacts">
+                <a href="{{ url_for('about') }}" class="Input">О приложении</a>
+            </div>
+        </div>
+
+        <div class="Logo"> 
+            <div class="Black"> 
+                <a href="{{ url_for('home') }}"><p>Look</p></a> <!-- Link to the home page --> 
+            </div> 
+            <div class="Purple"> 
+                <a href="{{ url_for('home') }}"><p>Lab</p></a> <!-- Link to the home page --> 
+            </div> 
+        </div>
+    </header>
+
+    <main>
+        <section class="team-section">
+            <div class="team-header">
+            <h2 class="team-title">ЭТО НАША КОМАНДА!</h2>
+            <p class="team-subtitle">Вы можете связаться с каждым из нас</p>
+            </div>
+            <div class="team">
+                <div class="team-member">
+                    <img src="static/images/andrey.png" alt="Ковшов Андрей" class="team-photo">
+                    <h3 class="member-name">Ковшов Андрей</h3>
+                    <p class="member-role">ML-разработчик<br>руководитель</p>
+                    <a href="https://t.me/marat_saratov" target="_blank" class="member-contact">@marat_saratov</a>
+                </div>
+                <div class="team-member">
+                    <img src="static/images/anton.png" alt="Патышев Антон" class="team-photo">
+                    <h3 class="member-name">Патышев Антон</h3>
+                    <p class="member-role">ML-разработчик</p>
+                    <a href="https://t.me/Appe4" target="_blank" class="member-contact">@appe4</a>
+                </div>
+                <div class="team-member">
+                    <img src="static/images/maria_sh.png" alt="Шилько Мария" class="team-photo">
+                    <h3 class="member-name">Шилько Мария</h3>
+                    <p class="member-role">frontend-разработчик</p>
+                    <a href="https://t.me/tobletochka" target="_blank" class="member-contact">@tobletochka</a>
+                </div>
+                <div class="team-member">
+                    <img src="static/images/maria_zh.png" alt="Жарикова Мария" class="team-photo">
+                    <h3 class="member-name">Жарикова Мария</h3>
+                    <p class="member-role">backend-разработчик</p>
+                    <a href="https://t.me/Mawvwv" target="_blank" class="member-contact">@mawvwv</a>
+                </div>
+                <div class="team-member">
+                    <img src="static/images/svetlana.png" alt="Попова Светлана" class="team-photo">
+                    <h3 class="member-name">Попова Светлана</h3>
+                    <p class="member-role">UX/UI-дизайнер</p>
+                    <a href="https://t.me/dioprii" target="_blank" class="member-contact">@dioprii</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="Backmodal">
+        <div class="Modal">
+            <div class="Inmodal">
+                <div class="Welcome"><p>Добро пожаловать в LookLab</p></div>
+                <form action="{{ url_for('register') }}" method="post">
+                    <div class="Textname"><p>Имя*</p></div>
+                    <input type="text" name="username" class="Name" required> 
+                    <div class="Textemail">Почта*</div>
+                    <input type="email" name="email" class="Email" required> 
+                    <div class="Textpassword">Пароль*</div>
+                    <input type="password" name="password" class="Password" required> 
+                    <button type="submit" class="Buttonreg">Зарегистрироваться</button> 
+                </form>
+            </div>
+            <button class="Close">x</button>
+        </div>
+    </div>
+
+    <div class="Backmodalin" style="display: none;">
+        <!-- Initially hidden -->
+        <div class="Modalin">
+            <div class="Inmodalin">
+                <div class="Welcomein"><p>Добро пожаловать в LookLab</p></div>
+                <form action="{{ url_for('login') }}" method="post">
+                    <div class="Textnamein"><p>Имя или почта*</p></div>
+                    <input type="text" name="username" class="Nameor" required>
+                    <div class="Textpasswordin">Пароль*</div>
+                    <input type="password" name="password" class="Passwordin" required>
+                    <div class="Remember"><p>Я не помню пароль</p></div>
+                    <button type="submit" class="Buttonin">Войти</button>
+                </form>
+            </div>
+            <button class="Closein">x</button>
+        </div>
+    </div>
+
+
+    <script>
+
+        //Работа с регистрацией//
+        const nameField = document.querySelector('.Name');
+        const emailField = document.querySelector('.Email');
+        const passwordField = document.querySelector('.Password');
+        const button = document.querySelector('.Buttonreg');
+        
+        function checkFields() 
+        {
+            const isNameFilled = nameField.value.trim() !== '';
+            const isEmailFilled = emailField.value.trim() !== '';
+            const isPasswordFilled = passwordField.value.trim() !== '';
+        
+            button.classList.toggle('active', isNameFilled && isEmailFilled && isPasswordFilled);
+        }
+        
+        nameField.addEventListener('input', checkFields);
+        emailField.addEventListener('input', checkFields);
+        passwordField.addEventListener('input', checkFields);
+        
+        
+        checkFields();
+
+
+        const buttonElem = document.querySelector('.Register');
+        const modalElem = document.querySelector('.Backmodal');
+
+        modalElem.style.cssText = `
+            display: flex;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 300ms ease-in-out;
+        `;
+
+        const closeModal = (event) =>
+        {
+            const target = event.target;
+
+            if (target === modalElem || target.closest('.Close'))
+            {
+                modalElem.style.opacity = 0;
+
+                setTimeout(() =>
+                {
+                    modalElem.style.visibility = 'hidden'; 
+                }, 300)
+            }
+            
+        }
+
+        const openModal = () => 
+        {
+            modalElem.style.visibility = 'visible';
+            modalElem.style.opacity = 1;
+        }
+
+        buttonElem.addEventListener('click', openModal);
+        document.querySelector('.Close').addEventListener('click', closeModal);
+
+        //Работа со входом//
+        const loginUsernameInput = document.querySelector('.Nameor');
+        const loginPasswordInput = document.querySelector('.Passwordin');
+        const loginButton = document.querySelector('.Buttonin');
+
+        function enableLoginButton() 
+        {
+            const isUsernameEntered = loginUsernameInput.value.trim() !== '';
+            const isPasswordEntered = loginPasswordInput.value.trim() !== '';
+
+            loginButton.classList.toggle('active', isUsernameEntered && isPasswordEntered);
+        }
+
+        loginUsernameInput.addEventListener('input', enableLoginButton);
+        loginPasswordInput.addEventListener('input', enableLoginButton);
+
+
+        enableLoginButton();
+
+
+        const registerButton = document.querySelector('.Input');
+        const registrationModal = document.querySelector('.Backmodalin');
+
+        registrationModal.style.cssText = `
+            display: flex;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 300ms ease-in-out;
+        `;
+
+        const closeRegistrationModal = (event) => 
+        {
+        const clickedElement = event.target;
+
+        if (clickedElement.closest('.Closein'))
+        {
+            registrationModal.style.opacity = 0;
+            setTimeout(() => 
+            {
+                registrationModal.style.visibility = 'hidden';
+            }, 300);
+        }
+        };
+
+        registerButton.addEventListener('click', () => 
+        {
+            registrationModal.style.visibility = 'visible';
+            registrationModal.style.opacity = 1;
+        });
+
+        registrationModal.addEventListener('click', closeRegistrationModal);
+        document.querySelector('.Closein').addEventListener('click', closeRegistrationModal);
+
+    </script>
+</body>
+</html>

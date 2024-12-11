@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генерация образа</title>
+    <style>
+        .Back
+        {
+            background-color: white;
+            margin-top: 100px;
+            width: 100%;
+            height: 951px;
+        }
+
+        a
+        {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header 
+        {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 129px;
+            z-index: 1000;
+            background-color: white;
+        }
+        .Buttoncabinet 
+        {
+            float: right;
+            margin-right: -100px; 
+            font: 23px Montserrat Alternates Medium;
+            cursor: pointer;
+            margin-right: 190px;
+            margin-top: 30px;
+        }
+        .Buttoncabinet:hover 
+        {
+            color: #ADB3FF;
+        }
+        .Photo
+        {
+            margin-top: -65%;
+            float: right;
+            margin-right: -70%;
+        }
+
+        .Textup
+        {
+            font: 23px Montserrat Alternates Medium;
+        }
+        .Us
+        {
+            margin-top: 51px;
+            margin-left: 276px;
+            cursor: pointer;
+        }
+        
+        .Us:hover
+        {
+            color: #ADB3FF;
+        }
+        .Contacts
+        {
+            margin-left: 418px;
+            margin-top: -27px;
+            cursor: pointer;
+        }
+        .Contacts:hover
+        {
+            color: #ADB3FF;
+        }
+        .Logo
+        {
+            font: 24px Unbounded Medium;
+        }
+        .Black
+        {
+            margin-left: 70px;
+            margin-top: -55px;
+        }
+        .Purple
+        {
+            margin-left: 141px;
+            margin-top: -54px;
+            color: #ADB3FF;
+        }
+
+        .Textcenter
+        {
+
+            font: 55px Montserrat Black;
+            margin-top: -950px;
+            margin-left: 100px;
+        }
+
+        .input
+        {
+            border: none;
+            border-bottom: 1px solid black;
+            width: 500px;
+            margin-left: 100px;
+            margin-top: 20px;
+            outline: none;
+            font: 22px Montserrat Medium;
+        }
+
+        .Imagein
+        {
+            margin-top: -35px;
+            margin-left: 570px;
+        }
+
+        .One
+        {
+            margin-top: 50px;
+            margin-left: 100px;
+            font: 20px Montserrat Medium;
+            color: #777777;
+            cursor: pointer;
+        }
+        .Two
+        {
+            margin-top: -368px;
+            margin-left: 450px;
+            font: 20px Montserrat Medium;
+            color: #777777;
+            cursor: pointer;
+        }
+        .Three
+        {
+            margin-top: -368px;
+            margin-left: 800px;
+            font: 20px Montserrat Medium;
+            color: #777777;
+            cursor: pointer;
+        }
+
+        .Save
+        {
+            width: 300px;
+            height: 71px;
+            background-color: black;
+            color: white;
+            margin-top: 50px;
+            margin-left: 100px;
+            border: none;
+            cursor: pointer;
+            font: 17px Montserrat Medium;
+        }
+        .Save:hover
+        {
+            background-color: #ADB3FF;
+            color: white;
+            border: 2px solid #ADB3FF;
+        }
+        .Again
+        {
+            width: 300px;
+            height: 71px;
+            background-color: white;
+            margin-top: 50px;
+            margin-left: 50px;
+            cursor: pointer;
+            font: 17px Montserrat Medium;
+        }
+        .Again:hover
+        {
+            background-color: #ADB3FF;
+            color: white;
+            border: 2px solid #ADB3FF;
+        }
+
+        @font-face 
+        {
+            font-family: Montserrat Alternates Medium;
+            src: url(fonts/MontserratAlternates-Medium.ttf);
+        }
+        @font-face 
+        {
+            font-family: Unbounded Medium;
+            src: url(fonts/Unbounded-Medium.ttf);
+        }
+        @font-face 
+        {
+            font-family: Montserrat Black;
+            src: url(fonts/Montserrat-Black.ttf);
+        }
+        @font-face 
+        {
+            font-family: Montserrat Medium;
+            src: url(fonts/Montserrat-Medium.ttf);
+        }
+    </style>
+</head>
+<body>
+    <div class="Background">
+        <div class="Back"></div>
+    </div>
+
+    <header>
+        <div class="Buttoncabinet">
+            <a href="{{ url_for('profile') }}"><p>Кабинет</p></a>
+        </div>
+
+        <div class="Textup">
+            <div class="Us">
+                <a href="{{ url_for('contact') }}" class="Input">О нас</a>
+            </div>
+            <div class="Contacts">
+                <a href="{{ url_for('about') }}" class="Input">О приложении</a>
+            </div>
+        </div>
+
+        <div class="Logo"> 
+            <div class="Black"> 
+                <a href="{{ url_for('home') }}"><p>Look</p></a> <!-- Link to the home page --> 
+            </div> 
+            <div class="Purple"> 
+                <a href="{{ url_for('home') }}"><p>Lab</p></a> <!-- Link to the home page --> 
+            </div> 
+        </div>
+    </header>
+
+    <div class="Textcenter">
+        <p>Генерация образа</p>
+    </div>
+
+    <div class="Name">
+        <form action="" method="post">
+            <input type="text" placeholder="Образ №1" class="input">
+        </form>
+    </div>
+
+    <div class="Imagein">
+        <img src="images/pen_icon (2).png" alt="" width="30px" height="30px">
+    </div>
+
+    <img src="{{ outfit_image }}" alt="Random Outfit">
+
+    <div class="Buttons">
+        <form action="{{ url_for('save_favorite') }}" method="post">
+            <input type="hidden" name="outfit_image" value="{{ outfit_image }}">
+            <button type="submit" class="Save">Сохранить образ</button>
+        </form>
+    </div>
+
+    <div class="Buttons">
+        <form action="/generate" method="get">
+            <button type="submit" class="Again">Сгенерировать повторно</button>
+        </form>
+    </div>
+
+</body>
+</html>
